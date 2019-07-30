@@ -43,8 +43,3 @@ def create(request):
     #다른 홈페이지도 링크가능 http://google.com/
 def portfolio(request):
     return render(request, 'portfolio.html')
-def logout(request):
-    if request.method == 'POST':
-        auth.logout(request)
-        return redirect('home')
-    return render(request, 'home.html')

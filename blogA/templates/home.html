@@ -5,7 +5,7 @@
 <div class="container">
         {% for blog in blogs.all %}
                 <div class="card mb-3">
-                                <img src="..." class="card-img-top" alt="...">
+                                <img src="{{ blog.imgurl }}" class="card-img-top">
                                 <div class="card-body">
                                   <h5 class="card-title">제목 : {{ blog.title }}</h5>
                                   <p class="card-text">날짜 : {{ blog.pub_date }}</p>
