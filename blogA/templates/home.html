@@ -4,14 +4,14 @@
 <body>
 <div class="container">
         {% for blog in blogs.all %}
-        <div class="card">
-                <div class="card-body">
-                  <h3 class="card-title">제목 : {{ blog.title }} </h3>
-                  <h6 class="card-subtitle mb-2 text-muted">날짜 : {{ blog.pub_date }} </h6>
-                  <p class="card-text">본문 : {{ blog.summary }}</p>
-                  <a href="{% url 'detail' blog.id %}" class="card-link">...more</a>
-                </div>
-        </div>
+                <div class="card mb-3">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">제목 : {{ blog.title }}</h5>
+                                  <p class="card-text">날짜 : {{ blog.pub_date }}</p>
+                                  <p class="card-text"><small class="text-muted">{{ blog.summary }}</small></p>
+                                </div>
+                              </div>
         {% endfor %}
 </div>
 </body>
