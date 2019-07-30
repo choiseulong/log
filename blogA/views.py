@@ -46,7 +46,7 @@ def portfolio(request):
 
 def visit(request):
     visitor = Visitor()
-    visitor.name = request.GET['vname']
-    visitor.contents = request.GET['vcontents']
+    visitor.visitor_name = request.GET['vname']
+    visitor.visitor_contents = request.GET['vcontents']
     visitor.save()
     return render(request, 'home.html')
