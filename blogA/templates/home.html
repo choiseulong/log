@@ -3,6 +3,14 @@
 {% block contents %}
 <body>
 <div class="container">
+        <div class="container">
+        <h3> 방명록을 남겨주세요! </h3>
+        <form action="{% url 'visit' %}">
+        <input type="text" value="성함이 어떻게 되세요?" name="vname">
+        <input type="text" value="짧게 한 마디 부탁드립니다!" name="vcontents" maxlength="50">
+        <input type="button" value="주인에게 보내기">
+</form>
+</div>
         {% for blog in blogs.all %}
                 <div class="card mb-3">
                                 <img src="{{ blog.imgurl }}" class="card-img-top">
@@ -11,7 +19,7 @@
                                   <p class="card-text">날짜 : {{ blog.pub_date }}</p>
                                   <p class="card-text"><small class="text-muted">{{ blog.summary }}</small></p>
                                 </div>
-                              </div>
+                </div>
         {% endfor %}
 </div>
 </body>

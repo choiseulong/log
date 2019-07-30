@@ -11,3 +11,8 @@ class Blog(models.Model) :
 
     def summary(self) :
         return self.body[:100]
+class Visitor(models.Model) :
+    visitor_name = models.CharField(max_length=20)
+    visitor_contents = models.TextField(default="")
+    def __str__(self) :
+        return self.visitor_name

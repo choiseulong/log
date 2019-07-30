@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 #get_object_or_404 >> 예외처리
-from .models import Blog
+from .models import Blog, Visitor
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -43,3 +43,10 @@ def create(request):
     #다른 홈페이지도 링크가능 http://google.com/
 def portfolio(request):
     return render(request, 'portfolio.html')
+
+def visit(request):
+    visitor = Visitor()
+    visitor.name = request.GET['vname']
+    visitor.contents = request.GET['vcontents']
+    visitor.save()
+    return render(request, 'home.html')
