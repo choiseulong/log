@@ -4,12 +4,16 @@
 <body>
         
         <div class="container">
+                <h2> 새로운 글 쓰기 </h2>
                 <form action="{% url 'create' %}">
                     <h3> 제목 :</h3>
                     <input type="text" name="title">
                     <br>
                     <h4> 본문 :</h4>
                     <textarea cols=40 rows=10 name="body"></textarea>
+                    <br>
+                    이미지 URL :
+                    <input type="text" name="imgurl">
                     <br>
                     <input class="btn btn-dark" type="submit" value="제출">
                 </form>

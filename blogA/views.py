@@ -32,6 +32,7 @@ def create(request):
     blog = Blog()
     blog.title = request.GET['title']
     blog.body = request.GET['body']
+    blog.imgurl = request.GET['imgurl']
     #new name="" 을 가져온다 'title' 'body'
     blog.pub_date = timezone.datetime.now()
     blog.save()
